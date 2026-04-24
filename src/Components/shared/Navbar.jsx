@@ -34,7 +34,7 @@ const Navbar = () => {
                 <img src={logoImg} alt=''></img>
                 <ul className='flex gap-2'>
                         {
-                            navItems.map((item) => <MyNavLink to={item.path}>
+                            navItems.map((item, index) => <MyNavLink to={item.path} key={index}>
                                 <div className='flex items-center gap-1'>
                                     {item.icon} {item.text}
                                 </div>
