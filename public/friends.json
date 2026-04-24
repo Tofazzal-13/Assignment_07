@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Jenkins",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "email": "sarah.j@outlook.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": [
+      "college",
+      "hiking"
+    ],
+    "bio": "Former roommate from UCLA. We share a passion for trail running and indie coffee shops.",
+    "goal": 30,
+    "next_due_date": "2024-03-15"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Chen",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    "email": "mchen_tech@gmail.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": [
+      "work",
+      "gaming"
+    ],
+    "bio": "Senior Dev at the old startup. Usually online for Friday night League of Legends sessions.",
+    "goal": 14,
+    "next_due_date": "2024-05-02"
+  },
+  {
+    "id": 3,
+    "name": "Elena Rodriguez",
+    "picture": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+    "email": "elena.rod@icloud.com",
+    "days_since_contact": 18,
+    "status": "almost due",
+    "tags": [
+      "childhood",
+      "local"
+    ],
+    "bio": "Known her since kindergarten. Lives a few blocks away; we try to do Sunday brunches.",
+    "goal": 21,
+    "next_due_date": "2024-04-30"
+  },
+  {
+    "id": 4,
+    "name": "David Okoro",
+    "picture": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "email": "d.okoro@university.edu",
+    "days_since_contact": 120,
+    "status": "overdue",
+    "tags": [
+      "mentor",
+      "professional"
+    ],
+    "bio": "Former professor who helped me with my thesis. Need to update him on my career progress.",
+    "goal": 90,
+    "next_due_date": "2024-01-20"
+  },
+  {
+    "id": 5,
+    "name": "Priya Sharma",
+    "picture": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+    "email": "priya.sharma@freelance.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": [
+      "close friend",
+      "photography"
+    ],
+    "bio": "Photography enthusiast. We often go on photo walks in the city on weekends.",
+    "goal": 7,
+    "next_due_date": "2024-04-29"
+  },
+  {
+    "id": 6,
+    "name": "Liam O'Connor",
+    "picture": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6",
+    "email": "liam.oconnor@pubmail.ie",
+    "days_since_contact": 55,
+    "status": "overdue",
+    "tags": [
+      "travel",
+      "music"
+    ],
+    "bio": "Met in a hostel in Berlin. Huge vinyl collector and guitarist in a local band.",
+    "goal": 60,
+    "next_due_date": "2024-04-10"
+  },
+  {
+    "id": 7,
+    "name": "Jordan Smith",
+    "picture": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61",
+    "email": "jsmith_92@gmail.com",
+    "days_since_contact": 25,
+    "status": "almost due",
+    "tags": [
+      "gym",
+      "neighbor"
+    ],
+    "bio": "My gym partner for morning sessions. Motivation is high when we train together.",
+    "goal": 28,
+    "next_due_date": "2024-05-01"
+  },
+  {
+    "id": 8,
+    "name": "Sophie Dubois",
+    "picture": "https://images.unsplash.com/photo-1554151228-14d9def656e4",
+    "email": "sophie.dubois@paris.fr",
+    "days_since_contact": 10,
+    "status": "on-track",
+    "tags": [
+      "language exchange",
+      "cooking"
+    ],
+    "bio": "Helping me practice French. We exchange recipes once a month via video call.",
+    "goal": 30,
+    "next_due_date": "2024-05-17"
+  },
+  {
+    "id": 9,
+    "name": "Alex Thompson",
+    "picture": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+    "email": "athompson@designcorp.com",
+    "days_since_contact": 80,
+    "status": "overdue",
+    "tags": [
+      "college",
+      "tech"
+    ],
+    "bio": "Design lead and college buddy. We usually catch up at major tech conferences.",
+    "goal": 45,
+    "next_due_date": "2024-03-20"
+  },
+  {
+    "id": 10,
+    "name": "Maya Lin",
+    "picture": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    "email": "maya.lin.art@gmail.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": [
+      "art",
+      "close friend"
+    ],
+    "bio": "Local mural artist. We've been friends since high school art club.",
+    "goal": 10,
+    "next_due_date": "2024-05-03"
+  }
+]

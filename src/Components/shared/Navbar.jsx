@@ -30,7 +30,7 @@ const Navbar = () => {
     ]
     return (
         <nav>
-            <div className='container mx-auto flex justify-between items-center py-4'>
+            <div className='container mx-auto flex justify-between items-center py-4 '>
                 <img src={logoImg} alt=''></img>
                 <ul className='flex gap-2'>
                         {
