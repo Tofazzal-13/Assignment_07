@@ -3,12 +3,30 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router/dom'
-import Navbar from './Components/Navbar/Navbar'
+import RootLayout from './layout/RootLayout'
+import Homepage from './pages/homepage/Homepage'
+import TimeLine from './pages/timeline/TimeLine'
+import Stats from './pages/stats/Stats'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Navbar,
+    Component: RootLayout,
+    children:[
+      {
+        index: true,
+        Component: Homepage
+      },
+      {
+        path: "/timeline",
+        Component: TimeLine
+      },
+      {
+        path: "/stats",
+        Component: Stats
+      }
+    ],
+    errorElement: <h2>This page is not found</h2>
   },
 ]);
 
@@ -18,3 +36,4 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+  
