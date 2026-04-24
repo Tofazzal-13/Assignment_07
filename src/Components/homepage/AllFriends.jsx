@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 const AllFriends = () => {
     const friends = useLoaderData();
 
-    // স্ট্যাটাস অনুযায়ী কালার সেট করার ফাংশন
+    
     const getStatusColor = (status) => {
         switch (status) {
             case 'overdue': return 'bg-red-500 text-white';
