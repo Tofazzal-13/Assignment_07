@@ -30,19 +30,28 @@ const Navbar = () => {
     ]
     return (
         <nav className="sticky top-0 z-50 bg-white/80  border-b border-gray-100">
-            <div className='container mx-auto flex justify-between items-center py-4 '>
-                <Link to="/">
-                    <img src={logoImg} alt=''></img>
-                </Link>
-                <ul className='flex gap-2'>
-                    {
-                        navItems.map((item, index) => <MyNavLink to={item.path} key={index}>
-                            <div className='flex items-center gap-1'>
-                                {item.icon} {item.text}
-                            </div>
-                        </MyNavLink>)
-                    }
-                </ul>
+
+            <div className='container mx-auto'>
+                <div className="navbar">
+                    <div className="flex-1">
+                        <Link to="/">
+                            <img src={logoImg} alt=''></img>
+                        </Link>
+                    </div>
+                    <div className="flex-none">
+                        <ul className='flex gap-2'>
+                            {
+                                navItems.map((item, index) => <MyNavLink to={item.path} key={index}>
+                                    <div className='flex items-center gap-1'>
+                                        {item.icon} {item.text}
+                                    </div>
+                                </MyNavLink>)
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+
 
 
             </div>

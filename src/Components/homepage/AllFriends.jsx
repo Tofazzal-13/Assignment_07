@@ -19,7 +19,10 @@ const AllFriends = () => {
     };
 
     return (
+
+        
         <div className='container mx-auto px-14 pb-16'>
+            
             <h2 className='text-xl font-semibold mb-6'>Your Friends</h2>
 
             {loading ?

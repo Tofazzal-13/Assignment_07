@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router';
 import useFriends from '../../hook/useFriends';
 import { FaPhoneAlt, FaCommentAlt, FaVideo, FaClock, FaArchive, FaTrashAlt } from 'react-icons/fa';
 import { PacmanLoader } from 'react-spinners';
+import { CheckInContext } from '../../context/checkInContext';
 
 const FriendsDetails = () => {
     const { id } = useParams();
@@ -11,6 +12,8 @@ const FriendsDetails = () => {
 
     const friend = allFriends.find(f => f.id == id);
 
+    const {checkIn, setCheckIn} = useContext( CheckInContext )
+
     if (loading) return <div className="flex justify-center p-20 text-2xl font-bold">
         <PacmanLoader
             color="#244D3F"
@@ -18,6 +21,13 @@ const FriendsDetails = () => {
         />
     </div>;
     if (!friend) return <div className="text-center p-20 text-2xl text-red-500">Friend not found!</div>;
+
+    const handleCheckIn = () =>{
+        setCheckIn([...checkIn, friend])
+    }
+
+  
+    
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -29,21 +39,6 @@ const FriendsDetails = () => {
     };
 
 
-    //     {
-    //     "id": 2,
-    //     "name": "Marcus Chen",
-    //     "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-    //     "email": "mchen_tech@gmail.com",
-    //     "days_since_contact": 5,
-    //     "status": "on-track",
-    //     "tags": [
-    //       "work",
-    //       "gaming"
-    //     ],
-    //     "bio": "Senior Dev at the old startup. Usually online for Friday night League of Legends sessions.",
-    //     "goal": 14,
-    //     "next_due_date": "2024-05-02"
-    //   }
     return (
         <div className="bg-[#f8fafc] min-h-screen p-6 md:p-12">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -123,7 +118,9 @@ const FriendsDetails = () => {
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                         <h4 className="text-emerald-800 font-semibold mb-6">Quick Check-In</h4>
                         <div className="grid grid-cols-3 gap-4">
-                            <button className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
+                            <button
+                             onClick={() => handleCheckIn()}
+                             className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
                                 <FaPhoneAlt className="text-2xl text-gray-600 group-hover:text-emerald-600" />
                                 <span className="text-sm font-medium text-gray-700">Call</span>
                             </button>
