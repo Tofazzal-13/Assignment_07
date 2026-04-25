@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import {  PacmanLoader } from 'react-spinners';
+import useFriends from '../../hook/useFriends';
 
 
 const AllFriends = () => {
-
-    const [allFriends, setFriends] = useState([])
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch("/friends.json")
-            const data = await res.json()
-            setTimeout(() => {
-
-                setFriends(data)
-                setLoading(false)
-            }, 2000);
-
-        }
-        fetchData()
-    }, [])
+    const {allFriends,loading } = useFriends()
+    
 
 
     const getStatusColor = (status) => {
@@ -46,6 +32,7 @@ const AllFriends = () => {
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                     {
                         allFriends.map((friend) => (
+                            <Link to={`/${friend.id}`} key={friend.id}>
                             <div key={friend.id} className='bg-white border border-gray-100 p-8 rounded-2xl shadow-sm flex flex-col items-center text-center'>
                                 {/* Profile Image */}
                                 <div className="w-20 h-20 mb-4">
@@ -81,6 +68,7 @@ const AllFriends = () => {
                                     {friend.status}
                                 </div>
                             </div>
+                            </Link>
                         ))
                     }
                 </div>}
