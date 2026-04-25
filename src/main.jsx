@@ -3,15 +3,17 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router/dom'
 import { router } from './router/Route'
-import CheckInProvider from './context/CheckInProvider'
+import { TimelineProvider } from './context/TimelineContext'
+import { ToastContainer } from 'react-toastify'
 
 
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CheckInProvider>
+    <TimelineProvider>
+      <ToastContainer /> 
       <RouterProvider router={router} />
-    </CheckInProvider>
+    </TimelineProvider>
   </StrictMode>,
 )

@@ -1,18 +1,21 @@
-import React, { useContext } from 'react';
+
 import { useParams } from 'react-router';
 import useFriends from '../../hook/useFriends';
 import { FaPhoneAlt, FaCommentAlt, FaVideo, FaClock, FaArchive, FaTrashAlt } from 'react-icons/fa';
 import { PacmanLoader } from 'react-spinners';
-import { CheckInContext } from '../../context/checkInContext';
+import { useTimeline } from '../../context/TimelineContext';
+
+
 
 const FriendsDetails = () => {
+    const { addEntry } = useTimeline();
     const { id } = useParams();
     const { allFriends, loading } = useFriends();
 
 
     const friend = allFriends.find(f => f.id == id);
 
-    const {checkIn, setCheckIn} = useContext( CheckInContext )
+
 
     if (loading) return <div className="flex justify-center p-20 text-2xl font-bold">
         <PacmanLoader
@@ -22,12 +25,9 @@ const FriendsDetails = () => {
     </div>;
     if (!friend) return <div className="text-center p-20 text-2xl text-red-500">Friend not found!</div>;
 
-    const handleCheckIn = () =>{
-        setCheckIn([...checkIn, friend])
-    }
 
-  
-    
+
+
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -119,16 +119,20 @@ const FriendsDetails = () => {
                         <h4 className="text-emerald-800 font-semibold mb-6">Quick Check-In</h4>
                         <div className="grid grid-cols-3 gap-4">
                             <button
-                             onClick={() => handleCheckIn()}
-                             className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
+                                onClick={() => addEntry('Call', friend.name)}
+                                className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
                                 <FaPhoneAlt className="text-2xl text-gray-600 group-hover:text-emerald-600" />
                                 <span className="text-sm font-medium text-gray-700">Call</span>
                             </button>
-                            <button className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
+                            <button
+                                onClick={() => addEntry('Text', friend.name)}
+                                className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
                                 <FaCommentAlt className="text-2xl text-gray-600 group-hover:text-emerald-600" />
                                 <span className="text-sm font-medium text-gray-700">Text</span>
                             </button>
-                            <button className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
+                            <button
+                                onClick={() => addEntry('Video', friend.name)}
+                                className="flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-100 hover:bg-emerald-50 hover:border-emerald-200 transition-all group">
                                 <FaVideo className="text-2xl text-gray-600 group-hover:text-emerald-600" />
                                 <span className="text-sm font-medium text-gray-700">Video</span>
                             </button>
