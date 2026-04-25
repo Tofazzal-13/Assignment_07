@@ -48,8 +48,4 @@ Gain insights into your social habits with a visual **Analytics Dashboard**. Usi
 
 ---
 
-## 📜 License
-Distributed under the MIT License. See `LICENSE` for more information.
 
----
-**Made with ❤️ for better connections.**
