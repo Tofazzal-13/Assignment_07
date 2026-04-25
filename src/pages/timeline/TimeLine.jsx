@@ -41,7 +41,7 @@ const Timeline = () => {
                         <option value="Call">Calls Only</option>
                         <option value="Text">Texts Only</option>
                         <option value="Video">Videos Only</option>
-                        <option value="Meetup">Meetups Only</option>
+    
                     </select>
                 </div>
                 
