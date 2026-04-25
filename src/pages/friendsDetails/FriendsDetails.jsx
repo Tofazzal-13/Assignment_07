@@ -4,6 +4,7 @@ import useFriends from '../../hook/useFriends';
 import { FaPhoneAlt, FaCommentAlt, FaVideo, FaClock, FaArchive, FaTrashAlt } from 'react-icons/fa';
 import { PacmanLoader } from 'react-spinners';
 import { useTimeline } from '../../context/TimelineContext';
+import ErrorPage from '../error/Error';
 
 
 
@@ -23,7 +24,7 @@ const FriendsDetails = () => {
             size={30}
         />
     </div>;
-    if (!friend) return <div className="text-center p-20 text-2xl text-red-500">Friend not found!</div>;
+    if (!friend) return <ErrorPage></ErrorPage>;
 
 
 

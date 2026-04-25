@@ -4,6 +4,8 @@ import Homepage from "../pages/homepage/Homepage";
 import TimeLine from "../pages/timeline/TimeLine";
 import Stats from "../pages/stats/Stats";
 import FriendsDetails from "../pages/friendsDetails/FriendsDetails";
+import ErrorPage from "../pages/error/Error";
+
 
 
 export const router = createBrowserRouter([
@@ -31,6 +33,6 @@ export const router = createBrowserRouter([
         Component: Stats
       }
     ],
-    errorElement: <h2>This page is not found</h2>
+    errorElement: <ErrorPage></ErrorPage> 
   },
 ]);
